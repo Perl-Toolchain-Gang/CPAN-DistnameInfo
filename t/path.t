@@ -1,5 +1,5 @@
 
-use Test::More tests => 206;
+use Test::More tests => 215;
 use Data::Dumper;
 
 use CPAN::DistnameInfo;
@@ -225,4 +225,13 @@ id/J/JV/JV/PostScript-Font-1.09.tar.gz
 	distvname	PostScript-Font-1.09
 	version		1.09
 	cpanid		JV
+	extension	tar.gz
+
+id/I/IB/IBMTORDB2/DBD-DB2-0.77.tar.gz
+	filename	DBD-DB2-0.77.tar.gz
+	dist		DBD-DB2
+	maturity	released
+	distvname	DBD-DB2-0.77
+	version		0.77
+	cpanid		IBMTORDB2
 	extension	tar.gz
