@@ -4,16 +4,6 @@ META.yml
 Makefile.PL
 README
 SIGNATURE
-inc/Module/Install.pm
-inc/Module/Install/Base.pm
-inc/Module/Install/Can.pm
-inc/Module/Install/Fetch.pm
-inc/Module/Install/Include.pm
-inc/Module/Install/Makefile.pm
-inc/Module/Install/Metadata.pm
-inc/Module/Install/Win32.pm
-inc/Test/Builder.pm
-inc/Test/More.pm
 lib/CPAN/DistnameInfo.pm
 t/ext.t
 t/path.t
