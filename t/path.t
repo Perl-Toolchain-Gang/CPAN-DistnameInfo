@@ -1,5 +1,5 @@
 
-use Test::More tests => 153;
+use Test::More tests => 160;
 use Data::Dumper;
 
 use CPAN::DistnameInfo;
@@ -194,3 +194,11 @@ M/MS/MSCHWERN/Test-Simple-0.48_01.tar.gz
 	distvname	Test-Simple-0.48_01
 	version		0.48_01
 	cpanid		MSCHWERN
+
+id/J/JV/JV/PostScript-Font-1.09.tar.gz
+	filename	PostScript-Font-1.09.tar.gz
+	dist		PostScript-Font
+	maturity	released
+	distvname	PostScript-Font-1.09
+	version		1.09
+	cpanid		JV
