@@ -1,3 +1,7 @@
+0.06  --  Mon Sep 20 14:28:32 BST 2004
+
+  * Added support for CPAN id containing a numerical digit (IBMTORDB2)
+
 0.05  --  Wed Jul 14 20:26:26 BST 2004
 
   * Added pathname attribute and method to return path passed to constructor
