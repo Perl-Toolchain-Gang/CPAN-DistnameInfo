@@ -1,0 +1,6 @@
+2003-10-15 Graham Barr <gbarr@pobox.com>
+
+  * Release 0.02
+  * Fix so the V3_1_1 of Unicode-Collate-Standard-V3_1_1-0.1.tar.gz is not treated
+    as part of the version
+  * Changed API to be OO based

@@ -1,5 +1,5 @@
 
-use Test::More tests => 550;
+use Test::More tests => 554;
 use Data::Dumper;
 
 use CPAN::DistnameInfo;
@@ -7,7 +7,9 @@ use CPAN::DistnameInfo;
 while(<DATA>) {
   chomp;
   my($file,@ret) = (split(/\t/, $_))[0..3];
-  my @tst = distname_info($file);
+  $ret[2] = $ret[2] ? 'developer' : 'released';
+  my $d = CPAN::DistnameInfo->new($file);
+  my @tst = ($d->dist, $d->version, $d->maturity);
   ok(eq_array(\@tst, \@ret))
     or print Data::Dumper->Dump([\@ret,\@tst],[qw(expected got)]);
 }
@@ -420,7 +422,6 @@ imcc.0.0.1.tar.gz	imcc	0.0.1
 router-lg-0.98a.tar.gz	router-lg	0.98a
 Net-RawIP-0.09c.tar.gz	Net-RawIP	0.09c
 TUXEDO_1_00.zip	TUXEDO	1_00
-Unicode-Collate-Standard-V3_1_1-0.1.tar.gz	Unicode-Collate-Standard	V3_1_1-0.1	1
 NetIcecast-1.02.zip	NetIcecast	1.02
 Memo32-1.00c.zip	Memo32	1.00c
 Memo32-1.01.zip	Memo32	1.01
@@ -563,3 +564,8 @@ Tk-DateEntry-1.36.tar.gz	Tk-DateEntry	1.36
 Apache-Emulator-0.02.tar.gz	Apache-Emulator	0.02
 Net-SMTP-Multipart-1.4.tar.gz	Net-SMTP-Multipart	1.4
 Set-CheckList-1.00.tar.gz	Set-CheckList	1.00
+Bioinf_V2.0.tar.gz	Bioinf	V2.0
+Geanfammer_V3.4.tar.gz	Geanfammer	V3.4
+CONFIG-V0.99.11.tar.gz	CONFIG	V0.99.11
+collate/Unicode-Collate-Standard-V3_1_1-0.1.tar.gz	Unicode-Collate-Standard-V3_1_1	0.1
+P4-1.1733.tar.gz	P4	1.1733
