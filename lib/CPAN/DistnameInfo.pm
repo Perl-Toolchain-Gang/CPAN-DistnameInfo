@@ -1,7 +1,7 @@
 
 package CPAN::DistnameInfo;
 
-$VERSION = "0.03";
+$VERSION = "0.04";
 use strict;
 
 sub distname_info {
@@ -65,8 +65,9 @@ sub new {
   ($info{filename} = $distfile) =~ s,^(((.*?/)?authors/)?id/)?([A-Z])/(\4[A-Z])/(\5[-A-Z]*)/,,
     and $info{cpanid} = $6;
 
-  if ($distfile =~ m,([^/]+)\.(?:tar\.g?z|zip|tgz)$,i) { # support more ?
+  if ($distfile =~ m,([^/]+)\.(tar\.g?z|zip|tgz)$,i) { # support more ?
     $info{distvname} = $1;
+    $info{extension} = $2;
   }
 
   @info{qw(dist version beta)} = distname_info($info{distvname});
@@ -81,6 +82,7 @@ sub maturity  { shift->{maturity} }
 sub filename  { shift->{filename} }
 sub cpanid    { shift->{cpanid} }
 sub distvname { shift->{distvname} }
+sub extension { shift->{extension} }
 
 sub properties { %{ $_[0] } }
 
@@ -104,6 +106,7 @@ CPAN::DistnameInfo - Extract distribution name and version from a distribution f
   my $filename  = $d->filename;  # "CPAN-DistnameInfo-0.02.tar.gz"
   my $cpanid    = $d->cpanid;    # "GBARR"
   my $distvname = $d->distvname; # "CPAN-DistnameInfo-0.02"
+  my $extension = $d->extension; # "tar.gz"
 
   my %prop = $d->properties;
 
@@ -147,6 +150,10 @@ that was passed in.
 =item maturity
 
 The maturity of the distribution. This will be either C<released> or C<developer>
+
+=item extension
+
+The extension of the distribution, often used to denote the archive type (e.g. 'tar.gz')
 
 =item properties
 
