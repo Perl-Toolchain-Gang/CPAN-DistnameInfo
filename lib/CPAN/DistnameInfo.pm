@@ -1,7 +1,7 @@
 
 package CPAN::DistnameInfo;
 
-$VERSION = "0.05";
+$VERSION = "0.06";
 use strict;
 
 sub distname_info {
@@ -62,7 +62,7 @@ sub new {
 
   my %info = ( pathname => $distfile );
 
-  ($info{filename} = $distfile) =~ s,^(((.*?/)?authors/)?id/)?([A-Z])/(\4[A-Z])/(\5[-A-Z]*)/,,
+  ($info{filename} = $distfile) =~ s,^(((.*?/)?authors/)?id/)?([A-Z])/(\4[A-Z])/(\5[-A-Z0-9]*)/,,
     and $info{cpanid} = $6;
 
   if ($distfile =~ m,([^/]+)\.(tar\.g?z|zip|tgz)$,i) { # support more ?
