@@ -1,7 +1,7 @@
 
 package CPAN::DistnameInfo;
 
-$VERSION = "0.04";
+$VERSION = "0.05";
 use strict;
 
 sub distname_info {
@@ -58,9 +58,9 @@ sub new {
   my $class = shift;
   my $distfile = shift;
 
-  my %info;
-
   $distfile =~ s,//+,/,g;
+
+  my %info = ( pathname => $distfile );
 
   ($info{filename} = $distfile) =~ s,^(((.*?/)?authors/)?id/)?([A-Z])/(\4[A-Z])/(\5[-A-Z]*)/,,
     and $info{cpanid} = $6;
@@ -83,6 +83,7 @@ sub filename  { shift->{filename} }
 sub cpanid    { shift->{cpanid} }
 sub distvname { shift->{distvname} }
 sub extension { shift->{extension} }
+sub pathname  { shift->{pathname} }
 
 sub properties { %{ $_[0] } }
 
@@ -107,6 +108,7 @@ CPAN::DistnameInfo - Extract distribution name and version from a distribution f
   my $cpanid    = $d->cpanid;    # "GBARR"
   my $distvname = $d->distvname; # "CPAN-DistnameInfo-0.02"
   my $extension = $d->extension; # "tar.gz"
+  my $pathname  = $d->pathname;  # "authors/id/G/GB/GBARR/..."
 
   my %prop = $d->properties;
 
@@ -154,6 +156,10 @@ The maturity of the distribution. This will be either C<released> or C<developer
 =item extension
 
 The extension of the distribution, often used to denote the archive type (e.g. 'tar.gz')
+
+=item pathname
+
+The pathname that was passed to the constructor when creating the object.
 
 =item properties
 

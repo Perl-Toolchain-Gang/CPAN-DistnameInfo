@@ -1,5 +1,5 @@
 
-use Test::More tests => 183;
+use Test::More tests => 206;
 use Data::Dumper;
 
 use CPAN::DistnameInfo;
@@ -9,6 +9,7 @@ local $/ ="";
 while(<DATA>) {
   chomp;
   my($file,%exp) = split(/[\t\n]+/, $_);
+  $exp{pathname} = $file;
   my $d = CPAN::DistnameInfo->new($file);
   my %got = $d->properties;
   while (my($k, $v) = each %got) {
