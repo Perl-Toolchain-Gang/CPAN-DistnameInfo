@@ -1,3 +1,7 @@
+0.07 -- Mon Jun 30 09:27:04 CDT 2008
+
+  * Added support for .tar.bz2 archive extension
+
 0.06  --  Mon Sep 20 14:28:32 BST 2004
 
   * Added support for CPAN id containing a numerical digit (IBMTORDB2)
