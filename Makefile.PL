@@ -7,8 +7,7 @@ abstract	('Extract distribution name and version from a distribution filename');
 author		('Graham Barr <gbarr@pobox.com>');
 version_from	('lib/CPAN/DistnameInfo.pm');
 license		('perl');
-
-requires	( perl => '5.004' );
+perl_version    5.004;
 
 include_deps	('Test::More');
 

@@ -1,44 +1,52 @@
-#line 1 "inc/Module/Install/Base.pm - /Users/gbarr/Library/Perl/Module/Install/Base.pm"
-# $File: //depot/cpan/Module-Install/lib/Module/Install/Base.pm $ $Author: autrijus $
-# $Revision: #10 $ $Change: 1847 $ $DateTime: 2003/12/31 23:14:54 $ vim: expandtab shiftwidth=4
-
+#line 1
 package Module::Install::Base;
 
-#line 31
+$VERSION = '0.75';
+
+# Suspend handler for "redefined" warnings
+BEGIN {
+	my $w = $SIG{__WARN__};
+	$SIG{__WARN__} = sub { $w };
+}
+
+### This is the ONLY module that shouldn't have strict on
+# use strict;
+
+#line 41
 
 sub new {
     my ($class, %args) = @_;
 
-    foreach my $method (qw(call load)) {
+    foreach my $method ( qw(call load) ) {
         *{"$class\::$method"} = sub {
-            +shift->_top->$method(@_);
+            shift()->_top->$method(@_);
         } unless defined &{"$class\::$method"};
     }
 
-    bless(\%args, $class);
+    bless( \%args, $class );
 }
 
-#line 49
+#line 61
 
 sub AUTOLOAD {
     my $self = shift;
-    goto &{$self->_top->autoload};
+    local $@;
+    my $autoload = eval { $self->_top->autoload } or return;
+    goto &$autoload;
 }
 
-#line 60
+#line 76
 
 sub _top { $_[0]->{_top} }
 
-#line 71
+#line 89
 
 sub admin {
-    my $self = shift;
-    $self->_top->{admin} or Module::Install::Base::FakeAdmin->new;
+    $_[0]->_top->{admin} or Module::Install::Base::FakeAdmin->new;
 }
 
 sub is_admin {
-    my $self = shift;
-    $self->admin->VERSION;
+    $_[0]->admin->VERSION;
 }
 
 sub DESTROY {}
@@ -47,11 +55,16 @@ package Module::Install::Base::FakeAdmin;
 
 my $Fake;
 sub new { $Fake ||= bless(\@_, $_[0]) }
+
 sub AUTOLOAD {}
+
 sub DESTROY {}
+
+# Restore warning handler
+BEGIN {
+	$SIG{__WARN__} = $SIG{__WARN__}->();
+}
 
 1;
 
-__END__
-
-#line 115
+#line 138
