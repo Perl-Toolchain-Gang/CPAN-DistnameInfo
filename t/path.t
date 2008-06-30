@@ -1,5 +1,5 @@
 
-use Test::More tests => 215;
+use Test::More tests => 224;
 use Data::Dumper;
 
 use CPAN::DistnameInfo;
@@ -235,3 +235,12 @@ id/I/IB/IBMTORDB2/DBD-DB2-0.77.tar.gz
 	version		0.77
 	cpanid		IBMTORDB2
 	extension	tar.gz
+
+id/I/IB/IBMTORDB2/DBD-DB2-0.99.tar.bz2
+	filename	DBD-DB2-0.99.tar.bz2
+	dist		DBD-DB2
+	maturity	released
+	distvname	DBD-DB2-0.99
+	version		0.99
+	cpanid		IBMTORDB2
+	extension	tar.bz2
