@@ -1,3 +1,4 @@
+.gitignore
 Changes
 inc/attributes.pm
 inc/Module/Install.pm

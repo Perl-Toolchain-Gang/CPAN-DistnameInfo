@@ -1,0 +1,44 @@
+This file contains message digests of all files listed in MANIFEST,
+signed via the Module::Signature module, version 0.55.
+
+To verify the content in this distribution, first make sure you have
+Module::Signature installed, then type:
+
+    % cpansign -v
+
+It will check each file's integrity, as well as the signature's
+validity.  If "==> Signature verified OK! <==" is not displayed,
+the distribution may already have been compromised, and you should
+not run its Makefile.PL or Build.PL.
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+SHA1 4c48401da9c997e33bfe5b6d2f0f8ec65a19b99c .gitignore
+SHA1 f731824bbf8b194ccafe2011795ef3767a06816a Changes
+SHA1 7d78e8ed9c85142d17004fa5f871c8f3e52edf81 MANIFEST
+SHA1 e1659a64f1054eb8f8e23c0027a9487649027ef0 META.yml
+SHA1 46050206932076ef96c2db03598c4d3363e82102 Makefile.PL
+SHA1 75225b292ce4d6d6bb0212fa8f249aaa8ee41ae8 README
+SHA1 f0577f8f88a6703e9bca2d10196cfd293f3d6f2f inc/Module/Install.pm
+SHA1 5d574849849860b8cf06035cc6f1a306c66cb326 inc/Module/Install/Base.pm
+SHA1 c30f50bc2a1542dff17f84a54d9316f3c3c6299e inc/Module/Install/Can.pm
+SHA1 9b618efcd783f6ed4bab84fa22b31886fcc38d57 inc/Module/Install/Fetch.pm
+SHA1 808d4b2d764185a34c89e675bb4eaad18c075b14 inc/Module/Install/Include.pm
+SHA1 cd14c8de2a67b0f14df9bc20c27f3edabd359d1b inc/Module/Install/Makefile.pm
+SHA1 a2162aec678d21988fce47ab805cf01773196292 inc/Module/Install/Metadata.pm
+SHA1 4ae5d56e11e640bd9520634dde6d563926f6d98a inc/Module/Install/Win32.pm
+SHA1 f0ebc594cf8ba858ee9a840c344d9b7ea2c3c6f4 inc/Test/Builder.pm
+SHA1 6bb30e9867f6dbcada80acca07cb727fa09fc3a0 inc/Test/Builder/Module.pm
+SHA1 07c750f370de7a44ee7b0ed9ec30a7e89c24c9b9 inc/Test/More.pm
+SHA1 a3b43f30a4aa19adb8cda1ceaf5b19da0a5e1cae inc/attributes.pm
+SHA1 0fcf3bc169b122941373d279a84bf36ac00885f6 lib/CPAN/DistnameInfo.pm
+SHA1 f35a4261879a055eb9acff5b40305962aadb5473 t/ext.t
+SHA1 3df94b44b99e14612c993848aa181d5e52aec8c0 t/path.t
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.9 (Darwin)
+
+iEYEARECAAYFAkho8x0ACgkQR0BL4gbYw3T0YACeIZ6y5y7kdwCIaYnX8iFE27UY
+790An1hYOyvg/CzHip88DFmApxhJh73D
+=Vl+X
+-----END PGP SIGNATURE-----
