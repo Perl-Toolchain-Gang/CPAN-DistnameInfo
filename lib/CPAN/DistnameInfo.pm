@@ -17,6 +17,10 @@ sub distname_info {
     )+)(.*)
   $/xs or return ($file,undef,undef);
 
+  if ($dist =~ /-undef\z/ and ! length $version) {
+    $dist =~ s/-undef\z//;
+  }
+
   if ($version =~ /^(-[Vv].*)-(\d.*)/) {
    
     # Catch names like Unicode-Collate-Standard-V3_1_1-0.1

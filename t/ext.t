@@ -1,5 +1,5 @@
 
-use Test::More tests => 554;
+use Test::More tests => 559;
 use Data::Dumper;
 
 use CPAN::DistnameInfo;
@@ -10,8 +10,8 @@ while(<DATA>) {
   $ret[2] = $ret[2] ? 'developer' : 'released';
   my $d = CPAN::DistnameInfo->new($file);
   my @tst = ($d->dist, $d->version, $d->maturity);
-  ok(eq_array(\@tst, \@ret))
-    or print Data::Dumper->Dump([\@ret,\@tst],[qw(expected got)]);
+  ok( eq_array(\@tst, \@ret), "output for $file" )
+    or diag(Data::Dumper->Dump([\@ret,\@tst],[qw(expected got)]));
 }
 
 __DATA__
@@ -569,3 +569,8 @@ Geanfammer_V3.4.tar.gz	Geanfammer	V3.4
 CONFIG-V0.99.11.tar.gz	CONFIG	V0.99.11
 collate/Unicode-Collate-Standard-V3_1_1-0.1.tar.gz	Unicode-Collate-Standard-V3_1_1	0.1
 P4-1.1733.tar.gz	P4	1.1733
+Foo-Bar-undef.tar.gz	Foo-Bar
+Foo-Bar-undef-1.0.tar.gz	Foo-Bar-undef	1.0
+Net-Vypress-Chat-0.72.1.tar.bz2 Net-Vypress-Chat 0.72.1
+Gopher-Server-0.1.1.tar.bz2 Gopher-Server 0.1.1
+HTML-Template-Dumper-0.1.tar.bz2 HTML-Template-Dumper 0.1
