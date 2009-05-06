@@ -1,29 +1,28 @@
 # -*- perl -*-
 
-use inc::Module::Install;
+BEGIN { require 5.004; }
 
-name		('CPAN-DistnameInfo');
-abstract	('Extract distribution name and version from a distribution filename');
-author		('Graham Barr <gbarr@pobox.com>');
-version_from	('lib/CPAN/DistnameInfo.pm');
-license		('perl');
-perl_version    5.004;
+use strict;
+use warnings;
+use ExtUtils::MakeMaker;
 
-include_deps	('Test::More');
+WriteMakefile(
+    ABSTRACT     => 'Extract distribution name and version from a distribution filename',
+    AUTHOR       => q[Graham Barr <gbarr@cpan.org>],
+    NAME         => q[CPAN::DistnameInfo],
+    PREREQ_PM    => {
+      'Test::More' => 0,
+    },
+    VERSION_FROM => 'lib/CPAN/DistnameInfo.pm',
+    (eval { ExtUtils::MakeMaker->VERSION(6.21) } ? (LICENSE => 'perl') : ()),
+    (   eval { ExtUtils::MakeMaker->VERSION(6.46) } ? (
+            META_MERGE => {
+                resources => {    ##
+                    repository => 'http://github.com/gbarr/CPAN-DistnameInfo',
+                },
+            }
+          )
+        : ()
+    ),
+);
 
-check_nmake();      # check and download nmake.exe for Win32
-
-&Makefile->write;
-&Meta->write;
-
-sub MY::postamble {
-  return <<'POSTAMBLE';
-
-distdir : manifest run_cpansign
-
-run_cpansign :
-	cpansign -s
-
-POSTAMBLE
-
-}
