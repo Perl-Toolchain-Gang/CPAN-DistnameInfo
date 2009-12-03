@@ -1,5 +1,5 @@
 
-use Test::More tests => 224;
+use Test::More tests => 233;
 use Data::Dumper;
 
 use CPAN::DistnameInfo;
@@ -244,3 +244,12 @@ id/I/IB/IBMTORDB2/DBD-DB2-0.99.tar.bz2
 	version		0.99
 	cpanid		IBMTORDB2
 	extension	tar.bz2
+
+CPAN/authors/id/L/LD/LDS/CGI.pm-2.34.tar.gz
+	filename	CGI.pm-2.34.tar.gz
+	dist		CGI
+	maturity	released
+	distvname	CGI.pm-2.34
+	version		2.34
+	cpanid		LDS
+	extension	tar.gz

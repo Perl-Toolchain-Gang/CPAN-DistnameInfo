@@ -29,6 +29,10 @@ sub distname_info {
     $version = $2;
   }
 
+  # Normalize the Dist.pm-1.23 convention which CGI.pm and
+  # a few others use.
+  $dist =~ s{\.pm$}{};
+
   $version = $1
     if !length $version and $dist =~ s/-(\d+\w)$//;
 
