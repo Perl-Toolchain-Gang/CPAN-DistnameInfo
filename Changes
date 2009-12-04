@@ -1,3 +1,7 @@
+0.09 -- Thu Dec 3 18:29:49 CST 2009
+
+  * Normalize dist() for CGI.pm [Michael G. Schwern]
+
 0.08 -- Wed May  6 09:21:47 CDT 2009
 
   * make a better guess at the meaning of Dist-Name-undef.tar.gz
