@@ -1,3 +1,7 @@
+0.10 -- Sat Mar 27 15:04:54 CDT 2010
+
+  * Support -TRAIL in distribution version to indicate developer release
+
 0.09 -- Thu Dec 3 18:29:49 CST 2009
 
   * Normalize dist() for CGI.pm [Michael G. Schwern]

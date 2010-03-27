@@ -3,3 +3,4 @@ blib
 pm_to_blib
 *.bak
 CPAN-DistnameInfo*
+.*.swp

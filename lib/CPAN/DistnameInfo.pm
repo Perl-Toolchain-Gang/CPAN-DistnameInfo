@@ -1,7 +1,7 @@
 
 package CPAN::DistnameInfo;
 
-$VERSION = "0.09";
+$VERSION = "0.10";
 use strict;
 
 sub distname_info {
@@ -51,7 +51,7 @@ sub distname_info {
     if ($file =~ /^perl-?\d+\.(\d+)(?:\D(\d+))?(-(?:TRIAL|RC)\d+)?$/) {
       $dev = 1 if (($1 > 6 and $1 & 1) or ($2 and $2 >= 50)) or $3;
     }
-    elsif ($version =~ /\d\D\d+_\d/) {
+    elsif ($version =~ /\d\D\d+_\d/ or $version =~ /-TRIAL/) {
       $dev = 1;
     }
   }

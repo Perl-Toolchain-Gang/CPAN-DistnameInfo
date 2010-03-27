@@ -1,5 +1,5 @@
 
-use Test::More tests => 233;
+use Test::More tests => 260;
 use Data::Dumper;
 
 use CPAN::DistnameInfo;
@@ -252,4 +252,31 @@ CPAN/authors/id/L/LD/LDS/CGI.pm-2.34.tar.gz
 	distvname	CGI.pm-2.34
 	version		2.34
 	cpanid		LDS
+	extension	tar.gz
+
+CPAN/authors/id/J/JE/JESSE/perl-5.12.0-RC0.tar.gz
+	filename	perl-5.12.0-RC0.tar.gz
+	dist		perl
+	maturity	developer
+	distvname	perl-5.12.0-RC0
+	version		5.12.0-RC0
+	cpanid		JESSE
+	extension	tar.gz
+
+CPAN/authors/id/G/GS/GSAR/perl-5.6.1-TRIAL3.tar.gz
+	filename	perl-5.6.1-TRIAL3.tar.gz
+	dist		perl
+	maturity	developer
+	distvname	perl-5.6.1-TRIAL3
+	version		5.6.1-TRIAL3
+	cpanid		GSAR
+	extension	tar.gz
+
+CPAN/authors/id/R/RJ/RJBS/Dist-Zilla-2.100860-TRIAL.tar.gz
+	filename	Dist-Zilla-2.100860-TRIAL.tar.gz
+	dist		Dist-Zilla
+	maturity	developer
+	distvname	Dist-Zilla-2.100860-TRIAL
+	version		2.100860-TRIAL
+	cpanid		RJBS
 	extension	tar.gz
