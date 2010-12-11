@@ -1,5 +1,5 @@
 
-use Test::More tests => 260;
+use Test::More tests => 269;
 use Data::Dumper;
 
 use CPAN::DistnameInfo;
@@ -279,4 +279,13 @@ CPAN/authors/id/R/RJ/RJBS/Dist-Zilla-2.100860-TRIAL.tar.gz
 	distvname	Dist-Zilla-2.100860-TRIAL
 	version		2.100860-TRIAL
 	cpanid		RJBS
+	extension	tar.gz
+
+CPAN/authors/id/M/MI/MINGYILIU/Bio-ASN1-EntrezGene-1.10-withoutworldwriteables.tar.gz
+	filename	Bio-ASN1-EntrezGene-1.10-withoutworldwriteables.tar.gz
+	dist		Bio-ASN1-EntrezGene
+	maturity	released
+	distvname	Bio-ASN1-EntrezGene-1.10-withoutworldwriteables
+	version		1.10
+	cpanid		MINGYILIU
 	extension	tar.gz

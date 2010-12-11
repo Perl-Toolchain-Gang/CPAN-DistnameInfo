@@ -21,6 +21,9 @@ sub distname_info {
     $dist =~ s/-undef\z//;
   }
 
+  # Remove potential -withoutworldwriteables suffix
+  $version =~ s/-withoutworldwriteables$//;
+
   if ($version =~ /^(-[Vv].*)-(\d.*)/) {
    
     # Catch names like Unicode-Collate-Standard-V3_1_1-0.1
