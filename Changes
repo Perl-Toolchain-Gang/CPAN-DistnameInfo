@@ -1,3 +1,7 @@
+0.11 -- Tue Dec 14 08:52:15 CST 2010
+
+  * Remove potential -withoutworldwriteables suffix [Vincent Pit]
+
 0.10 -- Sat Mar 27 15:04:54 CDT 2010
 
   * Support -TRAIL in distribution version to indicate developer release
