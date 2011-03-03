@@ -32,6 +32,14 @@ sub distname_info {
     $version = $2;
   }
 
+  if ($version =~ /(.+_.*)-(\d.*)/) {
+      # Catch names like Task-Deprecations5_14-1.00.tar.gz where the 5_14 is
+      # part of the distname. However, names like libao-perl_0.03-1.tar.gz
+      # should still have 0.03-1 as their version.
+      $dist .= $1;
+      $version = $2;
+  }
+
   # Normalize the Dist.pm-1.23 convention which CGI.pm and
   # a few others use.
   $dist =~ s{\.pm$}{};
