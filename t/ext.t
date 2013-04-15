@@ -1,5 +1,5 @@
 
-use Test::More tests => 560;
+use Test::More tests => 562;
 use Data::Dumper;
 
 use CPAN::DistnameInfo;
@@ -575,3 +575,5 @@ Net-Vypress-Chat-0.72.1.tar.bz2 Net-Vypress-Chat 0.72.1
 Gopher-Server-0.1.1.tar.bz2 Gopher-Server 0.1.1
 HTML-Template-Dumper-0.1.tar.bz2 HTML-Template-Dumper 0.1
 Task-Deprecations5_14-1.00.tar.gz	Task-Deprecations5_14	1.00
+Software-License-Boost_1_0-v0.0.1.tar.gz	Software-License-Boost_1_0	v0.0.1
+Test-Kwalitee-Extra-v0.0.6.tar.gz	Test-Kwalitee-Extra	v0.0.6
