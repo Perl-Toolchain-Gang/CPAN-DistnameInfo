@@ -24,7 +24,7 @@ sub distname_info {
   # Remove potential -withoutworldwriteables suffix
   $version =~ s/-withoutworldwriteables$//;
 
-  if ($version =~ /^(-[Vv].*)-(\d.*)/) {
+  if ($version =~ /^(-[Vv].*)-(v?\d.*)/) {
    
     # Catch names like Unicode-Collate-Standard-V3_1_1-0.1
     # where the V3_1_1 is part of the distname
@@ -32,7 +32,7 @@ sub distname_info {
     $version = $2;
   }
 
-  if ($version =~ /(.+_.*)-(\d.*)/) {
+  if ($version =~ /(.+_.*)-(v?\d.*)/) {
       # Catch names like Task-Deprecations5_14-1.00.tar.gz where the 5_14 is
       # part of the distname. However, names like libao-perl_0.03-1.tar.gz
       # should still have 0.03-1 as their version.
