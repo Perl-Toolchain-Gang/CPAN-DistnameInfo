@@ -7,6 +7,8 @@ use strict;
 sub distname_info {
   my $file = shift or return;
 
+  return ($file, undef, undef) if $file =~ /\P{ASCII}/;
+
   my ($dist, $version) = $file =~ /^
     ((?:[-+.]*(?:[A-Za-z0-9]+|(?<=\D)_|_(?=\D))*
       (?:
