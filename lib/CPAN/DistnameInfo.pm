@@ -9,11 +9,11 @@ sub distname_info {
 
   my ($dist, $version) = $file =~ /^
     ((?:[-+.]*(?:[A-Za-z0-9]+|(?<=\D)_|_(?=\D))*
-     (?:
-	[A-Za-z](?=[^A-Za-z]|$)
-	|
-	\d(?=-)
-     )(?<![._-][vV])
+      (?:
+        [A-Za-z](?=[^A-Za-z]|$)
+        |
+        \d(?=-)
+      )(?<![._-][vV])
     )+)(.*)
   $/xs or return ($file,undef,undef);
 
