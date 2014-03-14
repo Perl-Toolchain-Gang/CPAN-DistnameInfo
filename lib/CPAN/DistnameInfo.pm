@@ -27,7 +27,6 @@ sub distname_info {
   $version =~ s/-withoutworldwriteables$//;
 
   if ($version =~ /^(-[Vv].*)-(\d.*)/) {
-   
     # Catch names like Unicode-Collate-Standard-V3_1_1-0.1
     # where the V3_1_1 is part of the distname
     $dist .= $1;
@@ -64,7 +63,7 @@ sub distname_info {
     if ($file =~ /^perl-?\d+\.(\d+)(?:\D(\d+))?(-(?:TRIAL|RC)\d+)?$/) {
       $dev = 1 if (($1 > 6 and $1 & 1) or ($2 and $2 >= 50)) or $3;
     }
-    elsif ($version =~ /\d\D\d+_\d/ or $version =~ /-TRIAL/) {
+    elsif ($version =~ /\d\D\d+_\d/ or $version =~ s/-TRIAL$//) {
       $dev = 1;
     }
   }
