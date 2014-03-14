@@ -571,7 +571,7 @@ collate/Unicode-Collate-Standard-V3_1_1-0.1.tar.gz	Unicode-Collate-Standard-V3_1
 P4-1.1733.tar.gz	P4	1.1733
 Foo-Bar-undef.tar.gz	Foo-Bar
 Foo-Bar-undef-1.0.tar.gz	Foo-Bar-undef	1.0
-Net-Vypress-Chat-0.72.1.tar.bz2 Net-Vypress-Chat 0.72.1
-Gopher-Server-0.1.1.tar.bz2 Gopher-Server 0.1.1
-HTML-Template-Dumper-0.1.tar.bz2 HTML-Template-Dumper 0.1
+Net-Vypress-Chat-0.72.1.tar.bz2	Net-Vypress-Chat	0.72.1
+Gopher-Server-0.1.1.tar.bz2	Gopher-Server	0.1.1
+HTML-Template-Dumper-0.1.tar.bz2	HTML-Template-Dumper	0.1
 Task-Deprecations5_14-1.00.tar.gz	Task-Deprecations5_14	1.00
