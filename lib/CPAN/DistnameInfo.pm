@@ -63,7 +63,7 @@ sub distname_info {
     if ($file =~ /^perl-?\d+\.(\d+)(?:\D(\d+))?(-(?:TRIAL|RC)\d+)?$/) {
       $dev = 1 if (($1 > 6 and $1 & 1) or ($2 and $2 >= 50)) or $3;
     }
-    elsif ($version =~ /\d\D\d+_\d/ or $version =~ s/-TRIAL$//) {
+    elsif ($version =~ /\d\D\d+_\d/ or $version =~ s/-TRIAL[0-9]*$//) {
       $dev = 1;
     }
   }
