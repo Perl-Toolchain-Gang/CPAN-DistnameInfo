@@ -18,7 +18,7 @@ WriteMakefile(
     (   eval { ExtUtils::MakeMaker->VERSION(6.46) } ? (
             META_MERGE => {
                 resources => {    ##
-                    repository => 'http://github.com/gbarr/CPAN-DistnameInfo',
+                    repository => 'https://github.com/Perl-Toolchain-Gang/CPAN-DistnameInfo',
                 },
             }
           )
