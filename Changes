@@ -1,3 +1,7 @@
+0.13 -- ??
+
+  * Add support for .tar.xz achives [Ricardo SIGNES]
+
 0.12 -- Fri Mar 11 17:36:55 CST 2011
 
   * Grok dist names ending with something numeric containing underscores [Florian Ragwitz]
