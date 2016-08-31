@@ -581,5 +581,5 @@ Gopher-Server-0.1.1.tar.bz2	Gopher-Server	0.1.1
 HTML-Template-Dumper-0.1.tar.bz2	HTML-Template-Dumper	0.1
 Task-Deprecations5_14-1.00.tar.gz	Task-Deprecations5_14	1.00
 Foo-Bar-1.0௧.tar.gz	Foo-Bar-1.0௧
-Foo-Bar-1.0-TRIAL.tar.gz	Foo-Bar	1.0	1
-Foo-Bar-1.0-TRIAL2.tar.gz	Foo-Bar	1.0	1
+Foo-Bar-1.0-TRIAL.tar.gz	Foo-Bar	1.0-TRIAL	1
+Foo-Bar-1.0-TRIAL2.tar.gz	Foo-Bar	1.0-TRIAL2	1
