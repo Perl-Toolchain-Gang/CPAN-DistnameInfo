@@ -34,7 +34,7 @@ DESCRIPTION
 
     cpanid
         If the path given looked like a CPAN authors directory path, then
-        this will be the the CPAN id of the author.
+        this will be the CPAN id of the author.
 
     dist
         The name of the distribution
