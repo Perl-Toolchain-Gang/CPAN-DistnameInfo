@@ -92,6 +92,8 @@ sub new {
   @info{qw(dist version beta)} = distname_info($info{distvname});
   $info{maturity} = delete $info{beta} ? 'developer' : 'released';
 
+  $info{pkgurl} = 'pkg:cpan/'.$info{cpanid}.'/'.$info{dist}.'@'.$info{version}.'?ext='.$info{extension};
+
   return bless \%info, $class;
 }
 
@@ -103,6 +105,7 @@ sub cpanid    { shift->{cpanid} }
 sub distvname { shift->{distvname} }
 sub extension { shift->{extension} }
 sub pathname  { shift->{pathname} }
+sub pkgurl    { shift->{pkgurl} }
 
 sub properties { %{ $_[0] } }
 
@@ -128,6 +131,7 @@ CPAN::DistnameInfo - Extract distribution name and version from a distribution f
   my $distvname = $d->distvname; # "CPAN-DistnameInfo-0.02"
   my $extension = $d->extension; # "tar.gz"
   my $pathname  = $d->pathname;  # "authors/id/G/GB/GBARR/..."
+  my $pkgurl    = $d->pkgurl;    # "pkg:cpan/GBARR/CPAN-DistnameInfo@0.02?ext=tar.gz"
 
   my %prop = $d->properties;
 
@@ -188,6 +192,11 @@ for the known properties.
 =item version
 
 The extracted version
+
+=item pkgurl
+
+The package URL of the distribution, used for identifying packages in an ecosystem-agnostic
+manner. See L<https://github.com/package-url/purl-spec> for more information and the spec.
 
 =back
 

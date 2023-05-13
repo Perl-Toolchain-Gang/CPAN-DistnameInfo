@@ -1,5 +1,5 @@
 
-use Test::More tests => 269;
+use Test::More tests => 299;
 use Data::Dumper;
 
 use CPAN::DistnameInfo;
@@ -29,6 +29,7 @@ CPAN/authors/id/J/JA/JAMCC/ngb-101.zip
 	version		101
 	cpanid		JAMCC
 	extension	zip
+	pkgurl		pkg:cpan/JAMCC/ngb@101?ext=zip
 
 CPAN/authors/id/J/JS/JSHY/DateTime-Fiscal-Year-0.01.tar.gz
 	filename	DateTime-Fiscal-Year-0.01.tar.gz
@@ -38,6 +39,7 @@ CPAN/authors/id/J/JS/JSHY/DateTime-Fiscal-Year-0.01.tar.gz
 	version		0.01
 	cpanid		JSHY
 	extension	tar.gz
+	pkgurl		pkg:cpan/JSHY/DateTime-Fiscal-Year@0.01?ext=tar.gz
 
 CPAN/authors/id/G/GA/GARY/Math-PRSG-1.0.tgz
 	filename	Math-PRSG-1.0.tgz
@@ -47,6 +49,7 @@ CPAN/authors/id/G/GA/GARY/Math-PRSG-1.0.tgz
 	version		1.0
 	cpanid		GARY
 	extension	tgz
+	pkgurl		pkg:cpan/GARY/Math-PRSG@1.0?ext=tgz
 
 CPAN/authors/id/G/GA/GARY/Math-BigInteger-1.0.tar.gz
 	filename	Math-BigInteger-1.0.tar.gz
@@ -56,6 +59,7 @@ CPAN/authors/id/G/GA/GARY/Math-BigInteger-1.0.tar.gz
 	version		1.0
 	cpanid		GARY
 	extension	tar.gz
+	pkgurl		pkg:cpan/GARY/Math-BigInteger@1.0?ext=tar.gz
 
 CPAN/authors/id/T/TE/TERRY/VoiceXML-Server-1.6.tar.gz
 	filename	VoiceXML-Server-1.6.tar.gz
@@ -65,6 +69,7 @@ CPAN/authors/id/T/TE/TERRY/VoiceXML-Server-1.6.tar.gz
 	version		1.6
 	cpanid		TERRY
 	extension	tar.gz
+	pkgurl		pkg:cpan/TERRY/VoiceXML-Server@1.6?ext=tar.gz
 
 CPAN/authors/id/J/JA/JAMCC/ngb-100.tar.gz
 	filename	ngb-100.tar.gz
@@ -74,6 +79,7 @@ CPAN/authors/id/J/JA/JAMCC/ngb-100.tar.gz
 	version		100
 	cpanid		JAMCC
 	extension	tar.gz
+	pkgurl		pkg:cpan/JAMCC/ngb@100?ext=tar.gz
 
 CPAN/authors/id/J/JS/JSHY/DateTime-Fiscal-Year-0.02.tar.gz
 	filename	DateTime-Fiscal-Year-0.02.tar.gz
@@ -83,6 +89,7 @@ CPAN/authors/id/J/JS/JSHY/DateTime-Fiscal-Year-0.02.tar.gz
 	version		0.02
 	cpanid		JSHY
 	extension	tar.gz
+	pkgurl		pkg:cpan/JSHY/DateTime-Fiscal-Year@0.02?ext=tar.gz
 
 CPAN/authors/id/G/GA/GARY/Crypt-DES-1.0.tar.gz
 	filename	Crypt-DES-1.0.tar.gz
@@ -92,6 +99,7 @@ CPAN/authors/id/G/GA/GARY/Crypt-DES-1.0.tar.gz
 	version		1.0
 	cpanid		GARY
 	extension	tar.gz
+	pkgurl		pkg:cpan/GARY/Crypt-DES@1.0?ext=tar.gz
 
 CPAN/authors/id/G/GA/GARY/Stream-1.00.tar.gz
 	filename	Stream-1.00.tar.gz
@@ -101,6 +109,7 @@ CPAN/authors/id/G/GA/GARY/Stream-1.00.tar.gz
 	version		1.00
 	cpanid		GARY
 	extension	tar.gz
+	pkgurl		pkg:cpan/GARY/Stream@1.00?ext=tar.gz
 
 CPAN/authors/id/G/GS/GSPIVEY/Text-EP3-Verilog-1.00.tar.gz
 	filename	Text-EP3-Verilog-1.00.tar.gz
@@ -110,6 +119,7 @@ CPAN/authors/id/G/GS/GSPIVEY/Text-EP3-Verilog-1.00.tar.gz
 	version		1.00
 	cpanid		GSPIVEY
 	extension	tar.gz
+	pkgurl		pkg:cpan/GSPIVEY/Text-EP3-Verilog@1.00?ext=tar.gz
 
 CPAN/authors/id/T/TM/TMAEK/DBIx-Cursor-0.14.tar.gz
 	filename	DBIx-Cursor-0.14.tar.gz
@@ -119,6 +129,7 @@ CPAN/authors/id/T/TM/TMAEK/DBIx-Cursor-0.14.tar.gz
 	version		0.14
 	cpanid		TMAEK
 	extension	tar.gz
+	pkgurl		pkg:cpan/TMAEK/DBIx-Cursor@0.14?ext=tar.gz
 
 CPAN/authors/id/G/GA/GARY/Crypt-IDEA-1.0.tar.gz
 	filename	Crypt-IDEA-1.0.tar.gz
@@ -128,6 +139,7 @@ CPAN/authors/id/G/GA/GARY/Crypt-IDEA-1.0.tar.gz
 	version		1.0
 	cpanid		GARY
 	extension	tar.gz
+	pkgurl		pkg:cpan/GARY/Crypt-IDEA@1.0?ext=tar.gz
 
 CPAN/authors/id/G/GA/GARY/Math-TrulyRandom-1.0.tar.gz
 	filename	Math-TrulyRandom-1.0.tar.gz
@@ -137,6 +149,7 @@ CPAN/authors/id/G/GA/GARY/Math-TrulyRandom-1.0.tar.gz
 	version		1.0
 	cpanid		GARY
 	extension	tar.gz
+	pkgurl		pkg:cpan/GARY/Math-TrulyRandom@1.0?ext=tar.gz
 
 CPAN/authors/id/T/TE/TERRY/VoiceXML-Server-1.13.tar.gz
 	filename	VoiceXML-Server-1.13.tar.gz
@@ -146,6 +159,7 @@ CPAN/authors/id/T/TE/TERRY/VoiceXML-Server-1.13.tar.gz
 	version		1.13
 	cpanid		TERRY
 	extension	tar.gz
+	pkgurl		pkg:cpan/TERRY/VoiceXML-Server@1.13?ext=tar.gz
 
 JWILLIAMS/MasonX-Lexer-MSP-0.02.tar.gz
 	filename	JWILLIAMS/MasonX-Lexer-MSP-0.02.tar.gz
@@ -154,6 +168,7 @@ JWILLIAMS/MasonX-Lexer-MSP-0.02.tar.gz
 	distvname	MasonX-Lexer-MSP-0.02
 	version		0.02
 	extension	tar.gz
+	pkgurl		pkg:cpan/JWILLIAMS/MasonX-Lexer-MSP@0.02?ext=tar.gz
 
 CPAN/authors/id/J/JA/JAMCC/Tie-CacheHash-0.50.tar.gz
 	filename	Tie-CacheHash-0.50.tar.gz
@@ -163,6 +178,7 @@ CPAN/authors/id/J/JA/JAMCC/Tie-CacheHash-0.50.tar.gz
 	version		0.50
 	cpanid		JAMCC
 	extension	tar.gz
+	pkgurl		pkg:cpan/JAMCC/Tie-CacheHash@0.50?ext=tar.gz
 
 CPAN/authors/id/T/TM/TMAEK/DBIx-Cursor-0.13.tar.gz
 	filename	DBIx-Cursor-0.13.tar.gz
@@ -172,6 +188,7 @@ CPAN/authors/id/T/TM/TMAEK/DBIx-Cursor-0.13.tar.gz
 	version		0.13
 	cpanid		TMAEK
 	extension	tar.gz
+	pkgurl		pkg:cpan/TMAEK/DBIx-Cursor@0.13?ext=tar.gz
 
 CPAN/authors/id/G/GS/GSPIVEY/Text-EP3-1.00.tar.gz
 	filename	Text-EP3-1.00.tar.gz
@@ -181,6 +198,7 @@ CPAN/authors/id/G/GS/GSPIVEY/Text-EP3-1.00.tar.gz
 	version		1.00
 	cpanid		GSPIVEY
 	extension	tar.gz
+	pkgurl		pkg:cpan/GSPIVEY/Text-EP3@1.00?ext=tar.gz
 
 CPAN/authors/id/J/JD/JDUTTON/Parse-RandGen-0.100.tar.gz
 	filename	Parse-RandGen-0.100.tar.gz
@@ -190,6 +208,7 @@ CPAN/authors/id/J/JD/JDUTTON/Parse-RandGen-0.100.tar.gz
 	version		0.100
 	cpanid		JDUTTON
 	extension	tar.gz
+	pkgurl		pkg:cpan/JDUTTON/Parse-RandGen@0.100?ext=tar.gz
 
 id/N/NI/NI-S/Tk400.202.tar.gz
 	filename	Tk400.202.tar.gz
@@ -199,6 +218,7 @@ id/N/NI/NI-S/Tk400.202.tar.gz
 	version		400.202
 	cpanid		NI-S
 	extension	tar.gz
+	pkgurl		pkg:cpan/NI-S/Tk@400.202?ext=tar.gz
 
 authors/id/G/GB/GBARR/perl5.005_03.tar.gz
 	filename	perl5.005_03.tar.gz
@@ -208,6 +228,7 @@ authors/id/G/GB/GBARR/perl5.005_03.tar.gz
 	version		5.005_03
 	cpanid		GBARR
 	extension	tar.gz
+	pkgurl		pkg:cpan/GBARR/perl@5.005_03?ext=tar.gz
 
 M/MS/MSCHWERN/Test-Simple-0.48_01.tar.gz
 	filename	Test-Simple-0.48_01.tar.gz
@@ -217,6 +238,7 @@ M/MS/MSCHWERN/Test-Simple-0.48_01.tar.gz
 	version		0.48_01
 	cpanid		MSCHWERN
 	extension	tar.gz
+	pkgurl		pkg:cpan/MSCHWERN/Test-Simple@0.48_01?ext=tar.gz
 
 id/J/JV/JV/PostScript-Font-1.09.tar.gz
 	filename	PostScript-Font-1.09.tar.gz
@@ -226,6 +248,7 @@ id/J/JV/JV/PostScript-Font-1.09.tar.gz
 	version		1.09
 	cpanid		JV
 	extension	tar.gz
+	pkgurl		pkg:cpan/JV/PostScript-Font@1.09?ext=tar.gz
 
 id/I/IB/IBMTORDB2/DBD-DB2-0.77.tar.gz
 	filename	DBD-DB2-0.77.tar.gz
@@ -235,6 +258,7 @@ id/I/IB/IBMTORDB2/DBD-DB2-0.77.tar.gz
 	version		0.77
 	cpanid		IBMTORDB2
 	extension	tar.gz
+	pkgurl		pkg:cpan/IBMTORDB2/DBD-DB2@0.77?ext=tar.gz
 
 id/I/IB/IBMTORDB2/DBD-DB2-0.99.tar.bz2
 	filename	DBD-DB2-0.99.tar.bz2
@@ -244,6 +268,7 @@ id/I/IB/IBMTORDB2/DBD-DB2-0.99.tar.bz2
 	version		0.99
 	cpanid		IBMTORDB2
 	extension	tar.bz2
+	pkgurl		pkg:cpan/IBMTORDB2/DBD-DB2@0.99?ext=tar.bz2
 
 CPAN/authors/id/L/LD/LDS/CGI.pm-2.34.tar.gz
 	filename	CGI.pm-2.34.tar.gz
@@ -253,6 +278,7 @@ CPAN/authors/id/L/LD/LDS/CGI.pm-2.34.tar.gz
 	version		2.34
 	cpanid		LDS
 	extension	tar.gz
+	pkgurl		pkg:cpan/LDS/CGI.pm@2.34?ext=tar.gz
 
 CPAN/authors/id/J/JE/JESSE/perl-5.12.0-RC0.tar.gz
 	filename	perl-5.12.0-RC0.tar.gz
@@ -262,6 +288,7 @@ CPAN/authors/id/J/JE/JESSE/perl-5.12.0-RC0.tar.gz
 	version		5.12.0-RC0
 	cpanid		JESSE
 	extension	tar.gz
+	pkgurl		pkg:cpan/JESSE/perl@5.12.0-RC0?ext=tar.gz
 
 CPAN/authors/id/G/GS/GSAR/perl-5.6.1-TRIAL3.tar.gz
 	filename	perl-5.6.1-TRIAL3.tar.gz
@@ -271,6 +298,7 @@ CPAN/authors/id/G/GS/GSAR/perl-5.6.1-TRIAL3.tar.gz
 	version		5.6.1-TRIAL3
 	cpanid		GSAR
 	extension	tar.gz
+	pkgurl		pkg:cpan/GSAR/perl@5.6.1-TRIAL3?ext=tar.gz
 
 CPAN/authors/id/R/RJ/RJBS/Dist-Zilla-2.100860-TRIAL.tar.gz
 	filename	Dist-Zilla-2.100860-TRIAL.tar.gz
@@ -280,6 +308,7 @@ CPAN/authors/id/R/RJ/RJBS/Dist-Zilla-2.100860-TRIAL.tar.gz
 	version		2.100860-TRIAL
 	cpanid		RJBS
 	extension	tar.gz
+	pkgurl		pkg:cpan/RJBS/Dist-Zilla@2.100860-TRIAL?ext=tar.gz
 
 CPAN/authors/id/M/MI/MINGYILIU/Bio-ASN1-EntrezGene-1.10-withoutworldwriteables.tar.gz
 	filename	Bio-ASN1-EntrezGene-1.10-withoutworldwriteables.tar.gz
@@ -289,3 +318,4 @@ CPAN/authors/id/M/MI/MINGYILIU/Bio-ASN1-EntrezGene-1.10-withoutworldwriteables.t
 	version		1.10
 	cpanid		MINGYILIU
 	extension	tar.gz
+	pkgurl		pkg:cpan/MINGYILIU/Bio-ASN1-EntrezGene@1.10-withoutworldwriteables?ext=tar.gz
