@@ -1,6 +1,10 @@
 
-use Test::More tests => 560;
+use Test::More tests => 563;
 use Data::Dumper;
+
+use utf8;
+binmode( Test::Builder->new->$_, ':encoding(UTF-8)' )
+  for qw( output failure_output todo_output);
 
 use CPAN::DistnameInfo;
 
@@ -10,6 +14,7 @@ while(<DATA>) {
   $ret[2] = $ret[2] ? 'developer' : 'released';
   my $d = CPAN::DistnameInfo->new($file);
   my @tst = ($d->dist, $d->version, $d->maturity);
+
   ok( eq_array(\@tst, \@ret), "output for $file" )
     or diag(Data::Dumper->Dump([\@ret,\@tst],[qw(expected got)]));
 }
@@ -571,7 +576,10 @@ collate/Unicode-Collate-Standard-V3_1_1-0.1.tar.gz	Unicode-Collate-Standard-V3_1
 P4-1.1733.tar.gz	P4	1.1733
 Foo-Bar-undef.tar.gz	Foo-Bar
 Foo-Bar-undef-1.0.tar.gz	Foo-Bar-undef	1.0
-Net-Vypress-Chat-0.72.1.tar.bz2 Net-Vypress-Chat 0.72.1
-Gopher-Server-0.1.1.tar.bz2 Gopher-Server 0.1.1
-HTML-Template-Dumper-0.1.tar.bz2 HTML-Template-Dumper 0.1
+Net-Vypress-Chat-0.72.1.tar.bz2	Net-Vypress-Chat	0.72.1
+Gopher-Server-0.1.1.tar.bz2	Gopher-Server	0.1.1
+HTML-Template-Dumper-0.1.tar.bz2	HTML-Template-Dumper	0.1
 Task-Deprecations5_14-1.00.tar.gz	Task-Deprecations5_14	1.00
+Foo-Bar-1.0௧.tar.gz	Foo-Bar-1.0௧
+Foo-Bar-1.0-TRIAL.tar.gz	Foo-Bar	1.0	1
+Foo-Bar-1.0-TRIAL2.tar.gz	Foo-Bar	1.0	1
