@@ -82,8 +82,9 @@ sub new {
 
   my %info = ( pathname => $distfile );
 
-  ($info{filename} = $distfile) =~ s,^(((.*?/)?authors/)?id/)?([A-Z])/(\4[A-Z])/(\5[-A-Z0-9]*)/,,
-    and $info{cpanid} = $6;
+  ($info{filename} = $distfile) =~
+    s,^(((.*?/)?authors/)?id/)?(?:([A-Z])/(\4[A-Z])/(\5[-A-Z0-9]*)|([A-Z0-9][-A-Z0-9]*))/,,
+    and $info{cpanid} = $6 || $7;
 
   if ($distfile =~ m,([^/]+)\.(tar\.(?:g?z|bz2|xz)|zip|tgz)$,i) { # support more ?
     $info{distvname} = $1;

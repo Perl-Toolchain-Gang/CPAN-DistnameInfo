@@ -162,11 +162,12 @@ CPAN/authors/id/T/TE/TERRY/VoiceXML-Server-1.13.tar.gz
 	pkgurl		pkg:cpan/TERRY/VoiceXML-Server@1.13?ext=tar.gz
 
 JWILLIAMS/MasonX-Lexer-MSP-0.02.tar.gz
-	filename	JWILLIAMS/MasonX-Lexer-MSP-0.02.tar.gz
+	filename	MasonX-Lexer-MSP-0.02.tar.gz
 	dist		MasonX-Lexer-MSP
 	maturity	released
 	distvname	MasonX-Lexer-MSP-0.02
 	version		0.02
+	cpanid		JWILLIAMS
 	extension	tar.gz
 	pkgurl		pkg:cpan/JWILLIAMS/MasonX-Lexer-MSP@0.02?ext=tar.gz
 
