@@ -9,14 +9,17 @@ local $/ ="";
 while(<DATA>) {
   chomp;
   my($file,%exp) = split(/[\t\n]+/, $_);
+  my($testname) = $file =~ m|([^/]+)$|;
   $exp{pathname} = $file;
   my $d = CPAN::DistnameInfo->new($file);
   my %got = $d->properties;
-  while (my($k, $v) = each %got) {
-    is($d->$k(), $v);
-  }
-  ok(eq_hash(\%got, \%exp))
-    or print "\n",Data::Dumper->Dump([\%exp,\%got],[qw(expected got)]);
+
+  subtest $testname => sub {
+    while (my($k, $v) = each %got) {
+      is($d->$k(), $v, "$k");
+    }
+    is_deeply(\%got, \%exp, "hash");
+ }
 }
 
 
