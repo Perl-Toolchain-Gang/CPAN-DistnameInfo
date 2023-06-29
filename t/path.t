@@ -18,7 +18,8 @@ while(<DATA>) {
     while (my($k, $v) = each %got) {
       is($d->$k(), $v, "$k");
     }
-    is_deeply(\%got, \%exp, "hash");
+    is_deeply(\%got, \%exp, "hash matches")
+      or note "expected: ", explain \%exp;
  }
 }
 
