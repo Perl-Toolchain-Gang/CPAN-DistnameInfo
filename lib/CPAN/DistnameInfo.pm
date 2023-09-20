@@ -59,6 +59,7 @@ sub distname_info {
   }
 
   my $dev;
+  my $fullversion = $version;
   if (length $version) {
     if ($file =~ /^perl-?\d+\.(\d+)(?:\D(\d+))?(-(?:TRIAL|RC)\d+)?$/) {
       $dev = 1 if (($1 > 6 and $1 & 1) or ($2 and $2 >= 50)) or $3;
@@ -69,9 +70,10 @@ sub distname_info {
   }
   else {
     $version = undef;
+    $fullversion = undef;
   }
 
-  ($dist, $version, $dev);
+  ($dist, $version, $dev, $fullversion);
 }
 
 sub new {
@@ -91,16 +93,18 @@ sub new {
     $info{extension} = $2;
   }
 
-  @info{qw(dist version beta)} = distname_info($info{distvname});
+  @info{qw(dist version beta fullversion)} = distname_info($info{distvname});
   $info{maturity} = delete $info{beta} ? 'developer' : 'released';
 
-  $info{pkgurl} = 'pkg:cpan/'.$info{cpanid}.'/'.$info{dist}.'@'.$info{version}.'?ext='.$info{extension};
+  $info{pkgurl} = 'pkg:cpan/'.$info{cpanid}.'/'.$info{dist}.'@'.$info{fullversion};
+  $info{pkgurl} .= '?ext='.$info{extension} if $info{extension} ne 'tar.gz'; # Most CPAN packages are tarballs
 
   return bless \%info, $class;
 }
 
 sub dist      { shift->{dist} }
 sub version   { shift->{version} }
+sub fullversion { shift->{fullversion} }
 sub maturity  { shift->{maturity} }
 sub filename  { shift->{filename} }
 sub cpanid    { shift->{cpanid} }
