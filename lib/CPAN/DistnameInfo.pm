@@ -137,7 +137,7 @@ CPAN::DistnameInfo - Extract distribution name and version from a distribution f
   my $distvname = $d->distvname; # "CPAN-DistnameInfo-0.02"
   my $extension = $d->extension; # "tar.gz"
   my $pathname  = $d->pathname;  # "authors/id/G/GB/GBARR/..."
-  my $pkgurl    = $d->pkgurl;    # "pkg:cpan/GBARR/CPAN-DistnameInfo@0.02?ext=tar.gz"
+  my $pkgurl    = $d->pkgurl;    # "pkg:cpan/GBARR/CPAN-DistnameInfo@0.02"
 
   my %prop = $d->properties;
 
@@ -197,7 +197,11 @@ for the known properties.
 
 =item version
 
-The extracted version
+The extracted version, stripped of additional "version modifier", like "-TRIAL" or "-RC1". If you want the version
+
+=item fullversion
+
+The extracted version, including "version modifiers" like "-TRIAL" or "-RC1". If you just want the version number, use L<version>.
 
 =item pkgurl
 
