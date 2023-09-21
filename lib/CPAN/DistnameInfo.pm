@@ -59,6 +59,7 @@ sub distname_info {
   }
 
   my $dev;
+  my $fullversion = $version;
   if (length $version) {
     if ($file =~ /^perl-?\d+\.(\d+)(?:\D(\d+))?(-(?:TRIAL|RC)\d+)?$/) {
       $dev = 1 if (($1 > 6 and $1 & 1) or ($2 and $2 >= 50)) or $3;
@@ -69,9 +70,10 @@ sub distname_info {
   }
   else {
     $version = undef;
+    $fullversion = undef;
   }
 
-  ($dist, $version, $dev);
+  ($dist, $version, $dev, $fullversion);
 }
 
 sub new {
@@ -82,28 +84,34 @@ sub new {
 
   my %info = ( pathname => $distfile );
 
-  ($info{filename} = $distfile) =~ s,^(((.*?/)?authors/)?id/)?([A-Z])/(\4[A-Z])/(\5[-A-Z0-9]*)/,,
-    and $info{cpanid} = $6;
+  ($info{filename} = $distfile) =~
+    s,^(((.*?/)?authors/)?id/)?(?:([A-Z])/(\4[A-Z])/(\5[-A-Z0-9]*)|([A-Z0-9][-A-Z0-9]*))/,,
+    and $info{cpanid} = $6 || $7;
 
   if ($distfile =~ m,([^/]+)\.(tar\.(?:g?z|bz2|xz)|zip|tgz)$,i) { # support more ?
     $info{distvname} = $1;
     $info{extension} = $2;
   }
 
-  @info{qw(dist version beta)} = distname_info($info{distvname});
+  @info{qw(dist version beta fullversion)} = distname_info($info{distvname});
   $info{maturity} = delete $info{beta} ? 'developer' : 'released';
+
+  $info{pkgurl} = 'pkg:cpan/'.$info{cpanid}.'/'.$info{dist}.'@'.$info{fullversion};
+  $info{pkgurl} .= '?ext='.$info{extension} if $info{extension} ne 'tar.gz'; # Most CPAN packages are tarballs
 
   return bless \%info, $class;
 }
 
 sub dist      { shift->{dist} }
 sub version   { shift->{version} }
+sub fullversion { shift->{fullversion} }
 sub maturity  { shift->{maturity} }
 sub filename  { shift->{filename} }
 sub cpanid    { shift->{cpanid} }
 sub distvname { shift->{distvname} }
 sub extension { shift->{extension} }
 sub pathname  { shift->{pathname} }
+sub pkgurl    { shift->{pkgurl} }
 
 sub properties { %{ $_[0] } }
 
@@ -129,6 +137,7 @@ CPAN::DistnameInfo - Extract distribution name and version from a distribution f
   my $distvname = $d->distvname; # "CPAN-DistnameInfo-0.02"
   my $extension = $d->extension; # "tar.gz"
   my $pathname  = $d->pathname;  # "authors/id/G/GB/GBARR/..."
+  my $pkgurl    = $d->pkgurl;    # "pkg:cpan/GBARR/CPAN-DistnameInfo@0.02"
 
   my %prop = $d->properties;
 
@@ -188,7 +197,16 @@ for the known properties.
 
 =item version
 
-The extracted version
+The extracted version, stripped of additional "version modifier", like "-TRIAL" or "-RC1". If you want the version
+
+=item fullversion
+
+The extracted version, including "version modifiers" like "-TRIAL" or "-RC1". If you just want the version number, use L<version>.
+
+=item pkgurl
+
+The package URL of the distribution, used for identifying packages in an ecosystem-agnostic
+manner. See L<https://github.com/package-url/purl-spec> for more information and the spec.
 
 =back
 
